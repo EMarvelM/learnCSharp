@@ -1,25 +1,8 @@
 ﻿using System;
+using OOP.Temperatures;
+using OOP.VehicleModule;
 
 namespace OOP {
-	class Temperature {
-		private decimal _celsius;
-
-		public decimal Celsius {
-			get => _celsius;
-
-			set {
-				if (value < (decimal)-273.15)
-					throw new Exception("Celsius cannot be less than 237.15");
-
-				_celsius = value;
-			}
-		}	
-
-		public decimal Fahrenheit {
-			get => (_celsius * 9/5) + 32;
-		}
-	}
-
 	class Program {
 		static void Main(string[] args) {
 			Console.WriteLine("Hello, World!");
@@ -28,6 +11,12 @@ namespace OOP {
 			temp.Celsius = 9.1M;
 
 			Console.WriteLine(temp.Fahrenheit);
+
+			Vehicle vehicle = new Plane();
+
+			vehicle.Start();
+			vehicle.Speed = 300.9M;
+			vehicle.Stop();
 		}
 	}
 }
